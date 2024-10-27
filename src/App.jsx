@@ -114,6 +114,7 @@ const deleteNote = async (id) => {
   return (
     
     <>
+    
    
 {currentUser ? (  
   <>

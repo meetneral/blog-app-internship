@@ -41,11 +41,12 @@ const Header = ({ selectedSidebar, filterNotes, currentUser }) => {
             <MenuOutlinedIcon className={classes.icon} />
           </IconButton>
           <Typography color="textSecondary" className={classes.title}>
-           keep
+           Blogs&Vlog
           </Typography>
         </div>
         <Paper className={classes.middleSection}>
-          
+          <input value="Search the blog here" type="text"/>  
+          <button >Search</button>
           
         </Paper>
         <div className={classes.rightSection}>
