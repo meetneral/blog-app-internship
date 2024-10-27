@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   AppBar,
   Avatar,
@@ -32,7 +32,10 @@ const Header = ({ selectedSidebar, filterNotes, currentUser }) => {
  // const onClick = () => {
   //  filterNotes(search);
   //};
-
+const[searchbox,setSearchBox]=useState("search the blog")
+function handleSearch(e){
+  setSearchBox(e.target.value);
+}
   return (
     <AppBar position="relative" className={classes.container}>
       <Toolbar className={classes.toolbar}>
@@ -45,12 +48,12 @@ const Header = ({ selectedSidebar, filterNotes, currentUser }) => {
           </Typography>
         </div>
         <Paper className={classes.middleSection}>
-          <input value="Search the blog here" type="text"/>  
+          <input value={searchbox} type="text" onChange={handleSearch}/>  
           <button >Search</button>
           
         </Paper>
         <div className={classes.rightSection}>
-         
+        <i class="bi bi-briefcase">help</i>
           <Tooltip title={currentUser.displayName}>
             <Avatar alt={currentUser.displayName} src={currentUser.photoURL} />
           </Tooltip>
